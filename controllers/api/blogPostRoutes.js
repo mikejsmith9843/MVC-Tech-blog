@@ -1,10 +1,10 @@
 //Imports 
-const routes = require("express").Router();
+const router = require("express").Router();
 const { blogPost } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //Route to create a new blog post
-Router.post("/", withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
     console.log(req.body);
     try {
         const newBlogPost = await blogPost.create({
